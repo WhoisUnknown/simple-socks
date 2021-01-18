@@ -120,6 +120,7 @@ This method accepts an optional `options` argument:
 
 * `options.authentication` - A callback for authentication
 * `options.connectionFilter` - A callback for connection filtering
+* `options.localAddress` - local address the socket should connect from. 
 
 #### authentication
 

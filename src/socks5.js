@@ -235,9 +235,11 @@ class SocksServer {
 								},
 								connectionFilterDomain.intercept(() => {
 									let 
-										destination = net.createConnection(
-											args.dst.port,
-											args.dst.addr,
+										destination = net.createConnection({
+											port:args.dst.port,
+											host:args.dst.addr,
+											localAddress: self.options.localAddress
+										},
 											() => {
 												// prepare a success response
 												let responseBuffer = Buffer.alloc(args.requestBuffer.length);
